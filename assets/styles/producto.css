@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-div {
+.buscador{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,3 +38,38 @@ input[type="text"] {
 }
 
 
+.acomodoImg{
+    
+    border-radius: 32px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+
+}
+
+section{
+    
+    gap: 20px; /* separa elementos de adentro del contenedor*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+}
+
+.card{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(54, 54, 58);
+        border-radius: 10px;
+        
+}
+
+.card:hover{
+    background-color: rgb(3, 3, 3);
+    
+    
+}
