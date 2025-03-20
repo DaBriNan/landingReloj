@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Para centrarlo en toda la pantalla */
+}
+
+form {
+    position: relative;
+    width: 300px; /* Ajusta el tamaño del input */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Espacio para el icono */
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc; /* Solo línea inferior */
+    outline: none;
+    background: transparent; /* Para que el fondo sea limpio */
+}
+
+
+/* icono */
+.material-symbols-outlined { 
+    position: absolute;
+    right: 10px; /* Ajusta la posición del icono */
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    cursor: pointer;
+}
+
+
