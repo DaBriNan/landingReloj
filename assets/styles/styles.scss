@@ -1,0 +1,151 @@
+// Variables de colores
+$bg-transparent: rgba(0, 0, 0, 0);      // Fondo transparente al inicio
+$bg-solid: white;                      // Fondo blanco al hacer scroll
+$text-light: white;                    // Texto (enlaces e íconos) inicial
+$text-dark: black;                     // Texto (enlaces e íconos) cuando se hace scroll
+$hover-color: #d4af37;                 // Color dorado para el hover
+
+// Imagen del logo
+$logo-light: 'assets/img/kronos.jpg';       // Imagen inicial del logo
+$logo-dark: 'assets/img/kronos_blanco.jpg';    // Imagen del logo cuando nav es blanco
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Mixin para transiciones
+@mixin transition($time: 0.3s) {
+  transition: all $time ease-in-out;
+}
+
+// Barra de navegación
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  z-index: 100;
+  @include transition(0.4s);
+
+  // Estado inicial: fondo transparente y texto blanco
+  background: $bg-transparent;
+  color: $text-light;
+
+  #menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    list-style: none;
+
+    li {
+      padding: 10px 15px;
+
+      a {
+        text-decoration: none;
+        color: $text-light;
+        font-size: 16px;
+        font-weight: bold;
+        @include transition;
+
+        &:hover {
+          color: $hover-color;
+        }
+      }
+    }
+
+    // Íconos (se mantienen con el color del texto)
+    .icon {
+      cursor: pointer;
+      color: $text-light;
+      font-size: 20px;
+      @include transition;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+
+  // Estado al hacer scroll: fondo blanco, texto oscuro y cambio en el logo
+  &.scrolled {
+    background: $bg-solid;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    color: $text-dark;
+
+    #menu {
+      li {
+        a {
+          color: $text-dark;
+
+          &:hover {
+            color: $hover-color;
+          }
+        }
+      }
+
+      .icon {
+        color: $text-dark;
+      }
+    }
+
+    // Cambio de imagen del logo al hacer scroll
+    #logoHeader {
+      img {
+        content: url(#{$logo-dark});
+      }
+    }
+  }
+}
+
+// Logo: imagen inicial del logo
+#logoHeader {
+  a {
+    @include transition;
+  }
+  img {
+    height: 50px;
+    content: url(#{$logo-light});
+    @include transition;
+  }
+}
+
+// Video de fondo
+.video-wrapper {
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; // Siempre en el fondo
+  }
+}
+
+// Contenido de la página
+.page-content {
+  position: relative;
+  z-index: 10;      // Se muestra sobre el video
+  margin-top: 100vh; // Inicia justo después del video
+  background: white;
+  padding: 2rem;
+  text-align: center;
+
+  h1,
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .spacer {
+    height: 100vh; // Espacio adicional para permitir scroll
+  }
+}
