@@ -44,7 +44,8 @@ input[type="text"] {
 
 
 .acomodoImg{
-    
+    margin-left: 25px;
+    margin-right: 25px;
     border-radius: 32px;
     width: 250px;
     height: auto;
@@ -53,8 +54,11 @@ input[type="text"] {
 
 }
 
+
+
 section{
     /* margin-top: 80px; */
+    
     gap: 10px; /* separa elementos de adentro del contenedor*/
     display: flex;
     flex-direction: row;
@@ -68,14 +72,15 @@ section{
 }
 
 .card{
-    
+        margin-left: 0px;
+        margin-right: 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: rgba(225, 226, 231, 0.623);
         border-radius: 10px;
-        padding: 40px 0;
+        padding: 5%;
 
         
 
