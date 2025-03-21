@@ -80,10 +80,37 @@ section{
         align-items: center;
         background-color: rgba(225, 226, 231, 0.623);
         border-radius: 10px;
-        padding: 5%;
+        padding: 20px; 
 
-        
-
-        
+        text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
 }
 
+.card:hover {
+    transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Agrega sombra */
+}
+
+.extra-info {
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    overflow: hidden;
+}
+
+
+
+.card:hover .extra-info {
+    opacity: 1;
+    max-height: 100px; /* Ajusta según el contenido */
+}
+
+.compra{
+    color: rgb(73, 138, 92);
+}
+
+.compra:hover{
+    color: rgb(48, 52, 75);
+}
